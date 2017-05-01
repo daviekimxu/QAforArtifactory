@@ -1,0 +1,40 @@
+{
+   "key": "dockerhub",
+   "rclass" : "remote",
+   "packageType": "docker" 
+   "url" : "https://registry-1.docker.io/",
+  // "username": "remote-repo-user",
+  // "password": "pass",
+  // "proxy": "proxy1",
+   "description": "Dockerhub",
+   "notes": "dockerhub",
+  // "includesPattern": "**/*" (default),
+  // "excludesPattern": "" (default),
+  // "repoLayoutRef" : "maven-2-default",
+   "remoteRepoChecksumPolicyType": "generate-if-absent",
+  // "handleReleases": true (default),
+  // "handleSnapshots": true (default),
+  // "maxUniqueSnapshots": 0 (default),
+  // "suppressPomConsistencyChecks": false (default),
+  // "hardFail": false (default),
+  // "offline": false (default),
+  // "blackedOut": false (default),
+   "storeArtifactsLocally": true ,
+   "socketTimeoutMillis": 15000,
+   "localAddress": "212.150.139.167",
+   "retrievalCachePeriodSecs": 43200,
+   "missedRetrievalCachePeriodSecs": 7200,
+   "unusedArtifactsCleanupEnabled": false,
+   "unusedArtifactsCleanupPeriodHours": 0,
+  // "fetchJarsEagerly": false (default),
+   "fetchSourcesEagerly": false ,
+   "shareConfiguration": false,
+    "synchronizeProperties": false,
+   "propertySets": [],
+  //- "allowAnyHostAuth": false (default),       
+  //- "enableCookieManagement": false (default)   
+  //- "bowerRegistryUrl": "https://bower.herokuapp.com" (default)
+  //- "vcsType": "GIT" (default)
+  //- "vcsGitProvider": "GITHUB" (default) | "BITBUCKET" | "STASH" | "ARTIFACTORY" | "CUSTOM"
+  // "vcsGitDownloadUrl": "" (default)
+}
