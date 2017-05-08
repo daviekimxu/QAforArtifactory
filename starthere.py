@@ -8,16 +8,16 @@ import time
 
 #get PIP.  Might be better to prepackage requests 
 class cd:  #basic context manager
-    """Context manager for changing the current working directory"""
-    def __init__(self, newPath):
-        self.newPath = os.path.expanduser(newPath)
+	"""Context manager for changing the current working directory"""
+	def __init__(self, newPath):
+		self.newPath = os.path.expanduser(newPath)
 
-    def __enter__(self):
-        self.savedPath = os.getcwd()
-        os.chdir(self.newPath)
+	def __enter__(self):
+		self.savedPath = os.getcwd()
+		os.chdir(self.newPath)
 
-    def __exit__(self, etype, value, traceback):
-        os.chdir(self.savedPath)
+	def __exit__(self, etype, value, traceback):
+		os.chdir(self.savedPath)
 
 if subprocess.call('pip')=="-bash: pip: command not found":
 	subprocess.call('apt-get update')
@@ -45,7 +45,7 @@ else: #is this a good condition
 #repeat for NPM
 """if subprocess.call(npm install) == "npm:command not found":
 	subprocess.call("./nvminstall.sh")
-  	
+	
 
  else
 	shutil.copyfile(".npmrc, ~/.npmrc")
@@ -93,4 +93,4 @@ while True:
 		subprocess.call("./operations.py")
 		time.sleep(10)
 
-    
+	
