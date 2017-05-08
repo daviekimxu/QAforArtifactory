@@ -52,22 +52,6 @@ for k, v in samples.items():
 	with cd ('Samples'):
 		shutil.copytree(k,'../' +v)
 
-#makedictionary local directories 
-#localdirs={
-#		'MavenQA': mavenurl,
-#		'NPMQA': npmurl
-#	}
-
-#for k, v in localdirs.items():
-#
-#	subprocess.call("mkdir " + k)
-#	
-#	with cd('./'+k):
-#		subprocess.call("git clone " +v) #need a way to clone subdirectories
-
-#subprocess.call(docker pull arturl/dockerhub:busybox)
-
-#Run all simulation scripts in directory NEEDS FIX with libraries
 
 reposcripts={
 	'maven' :'Maven.py'
