@@ -1,0 +1,14 @@
+npm 
+
+##.npmrc file
+##where is the directory
+
+npm, needs refresh (source) after copy
+
+
+~/.npmrc
+
+npm search in here
+
+also delete local data here:
+/usr/local/lib/node_modules

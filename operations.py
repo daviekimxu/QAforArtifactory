@@ -1,10 +1,13 @@
-import os
+import os, sys
 import time
+import subprocess
 import configparser
 from shutil import copyfile #to move settings.xml
+import requests
+import json
 
 config=configparser.ConfigParser()
-config.sessions()
+config.sections()
 
 #open properties file, parse for Artifactory URL
 #inheritance?
@@ -13,6 +16,19 @@ arturl=""
 user=""
 password=""
 mavenurl=""
+npmurl=""
+
+class cd:  #basic context manager
+    """Context manager for changing the current working directory"""
+    def __init__(self, newPath):
+        self.newPath = os.path.expanduser(newPath)
+
+    def __enter__(self):
+        self.savedPath = os.getcwd()
+        os.chdir(self.newPath)
+
+    def __exit__(self, etype, value, traceback):
+        os.chdir(self.savedPath)
 
 config.read("properties.ini") 
 if "Artifactory" in config:
@@ -27,59 +43,53 @@ else:
 #get github
 if "GitHub" in config:
 
-		mavenurl=["GitHub"],["mavenurl"]
+	mavenurl=["GitHub"],["mavenurl"]
+	npmurl=["Github"],["npmurl"]
 else:
 	exit()
-class cd:  #basic context manager
-    """Context manager for changing the current working directory"""
-    def __init__(self, newPath):
-        self.newPath = os.path.expanduser(newPath)
 
-    def __enter__(self):
-        self.savedPath = os.getcwd()
-        os.chdir(self.newPath)
 
-    def __exit__(self, etype, value, traceback):
-        os.chdir(self.savedPath)
+#makedictionary local directories, pull clone from Github
+localdirs={
+		'MavenQA': mavenurl,
+		'NPMQA': npmurl
+	}
 
-#create repositories via RESTAPI
-#I need a better way to execute http/REST calls
-cd(~/ArtRepoJsons)
-	os.system(curl -iu user:password -T /path/artifactory/mvn-local-SNAPSHOT.json arturl/mvn-local-SNAPSHOT -H (content-type:application/json))
-	os.system(curl -iu user:password -T /path/to/mvn-local-RELEASE.json arturl/mvn-local-RELEASE -H (content-type:application/json))
-	os.system(curl -iu user:password -T /path/to/jcenter.json arturl/jcenter -H (content-type:application/json))
+for k, v in localdirs.items():
 
-#make directories, pull test image
-os.system(mkdir MavenQA, NPMQA)
-cd(~/MavenQA)
+	subprocess.call("mkdir " + k)
 	
-	os.system(git clone mavenurl) #urls as variables
-	time.sleep(3)# to confirm git clone success-is there another check?
+	with cd('./'+k):
+		subprocess.call("git clone " +v) #need a way to clone subdirectories
 
-copyfile(properties.ini, ~/RepoScripts/properties.ini)
+#subprocess.call(docker pull arturl/dockerhub:busybox)
 
-#repeat for NPM etc
-#os.system(docker pull arturl/dockerhub:busybox)
+#Run all simulation scripts in directory NEEDS FIX with libraries
 
-#Run all simulation scripts in directory
+reposcripts={
+	'maven' :'Maven.py'
+#	'npm' : 'npm.py'
+#	'docker' : 'docker.py'		
+}
 
-os.system(run-parts ~/RepoScripts)
+with cd('./RepoScripts'):
+	for k, v in reposcripts.items():
+		subprocess.call('python ' + v )
+
+#subprocess.call("run-parts ./RepoScripts")
 
 #search
-print(os.system(curl -iu user:password -XGET arturl/api/search/prop?QA=TEST))
+"""searchapi= "artifactory/api/search/prop?QA=TEST"
+r=requests.get(artul+searchapi, auth=(user:password))
+print (r.content) """
 
-#Delete artifacts via properties
+#Delete artifacts via AQL search of repositories
+subprocess.call("groovy ./cleanup.groovy")
 
-os.sytem(groovy ~/cleanup.groovy)
 
-#Delete repos/artifacts/caches.  Again, need better way to execute HTTP
-os.system(curl -iu user:password -XDELETE arturl/mvn-local-SNAPSHOT)
-os.system(curl -iu user:password -XDELETE arturl/mvn-local-RELEASE)
-os.system(curl -iu user:password -XDELETE arturl/jcenter)
-
-#clean local files
-os.system(rm -Rf MavenQA NPMQA)
-os.system(docker -rm busybox)
+#clean local directory
+subprocess.call("rm -Rf MavenQA NPMQA")
+subprocess.call("docker -rm busybox")
 
 
 

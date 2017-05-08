@@ -7,8 +7,13 @@ import org.apache.http.conn.HttpHostConnectException
  * Created by shaybagants on 4/30/15.
  */
 
-def query = 'items.find({"type":"file","name":{"$match":"*.jar"}})' // replace this with your AQL query
-def artifactoryURL = 'http://localhost:8081/artifactory/' // replace this with your Artifactory server
+def query = 'items.find({"repo":"jcenter-cache", 
+                        "mvn-local-SNAPSHOT", 
+                        "mvn-local-RELEASE",
+                        "docker-local",
+                        "dockerhub-cache"})' // replace this with your AQL query
+
+def artifactoryURL = 'http://104.199.127.225:12002/artifactory/' // replace this with your Artifactory server
 def restClient = new RESTClient(artifactoryURL)
 restClient.setHeaders(['Authorization': 'Basic ' + "admin:password".getBytes('iso-8859-1').encodeBase64()]) //replace the 'admin:password' with your own credentials
 def dryRun = true //set the value to false if you want the script to actually delete the artifacts

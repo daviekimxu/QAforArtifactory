@@ -1,8 +1,62 @@
 needs:
-context manager go over method
-Copy tool
+#context manager go over method
+#Copy tool
 
-update settings.xml
-update cleanup.groovy
-REST API handling
-URLs as variables?
+#update settings.xml
+#update cleanup.groovy
+#REST API handling
+#URLs as variables?
+
+#subprocess as part of package?
+#requests loop eg create repos 
+#	parse config
+#	generate dictionary with incrementing keys
+
+access to support github tbd
+reverse proxy via nginx in docker
+
+search need to be performed natively - in progress
+*do not delete repos, only clear cache done
+
+need way to clone subdirectories
+
+*maven-done
+docker need nginx config, script done
+generic
+
+npm - need npmrc, nvm, where else is npm intalled on local machine?
+
+gradle neet github, script, and properties
+
+rpm - 
+pypi - 
+
+
+
+
+//Find all items in a repository called "my_local" that have a property with a key called "license" and value that is any variant of "LGPL".
+items.find({"repo" : "my_local"},{"@artifactory.licenses" : {"$match" : "*LGPL*"}})
+
+
+
+8 package types up and running by end of month
+at a glance see resources
+
+max/consumed memory for each node
+disk space free for each filestore
+thread pool max/consumed
+http connection pool max/consumed
+db connection pool max/consumed
+async pool max/consumed
+hazelcast thread pool max/consumed
+Any other pool I cannot think of
+CPU usage %
+Hazelcast sync status
+Replication last performed compared to cron
+Garbage Collection last completed compared to cron
+all metadata/indexing tasks completed compared to interval
+
+jmonitor? 
+
+
+

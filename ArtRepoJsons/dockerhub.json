@@ -1,7 +1,7 @@
 {
    "key": "dockerhub",
    "rclass" : "remote",
-   "packageType": "docker" 
+   "packageType": "docker" ,
    "url" : "https://registry-1.docker.io/",
   // "username": "remote-repo-user",
   // "password": "pass",

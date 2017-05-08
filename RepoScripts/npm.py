@@ -1,12 +1,48 @@
-#npm
+import os
+import subprocess
+import time
+import configparser
+import requests
+import json
 
-#curl from set me up
+config=configparser.ConfigParser()
+config.sessions()
 
-#add credentials via replace npmrc
+os.chdir("..")
 
-#run curl for remote repo
+arturl=""
+user=""
+password=""
 
-#npm install --lru save
+config.read("properties.ini")
+if "Artifactory" in config:
+	arturl=["Artifactory"],["artifactoryurl"]
+	user=["Artifactory"],["user"]
+	password=["Artifactory"],["password"]
 
-#npm publish
+else:
+	exit()
+
+os.chdir("./NPMQA")
+	
+subprocess.call("npm -install")
+subprocess.call("npm -publish") #syntax needed
+
+#assign properties to make our lives easier
+url = arturl + "artifactory/api/storage/"
+repo1="npm-local"
+prop="?properties=QA=TEST&recursive=1"
+
+r=requests.put(url+repo1+prop, auth=(user, password))
+
+#index and recalculate metadata
+reindexurl = arturl+"/api/npm/" + repo1 + "/reindex"
+requests.post(reindexurl, auth=(user, password))
+
+
+
+
+
+
+
 
