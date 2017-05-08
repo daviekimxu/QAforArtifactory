@@ -77,7 +77,7 @@ with cd("./ArtRepoJsons"):
 		filepath=v+'.json'
 		with open(filepath) as fh:
 			mydata=fh.read() 
-		    requests.put( url+v, auth=(user, password), headers={"Content-type": "application/json"}, params={'file':filepath})
+			requests.put( url+v, auth=(user, password), headers={"Content-type": "application/json"}, params={'file':filepath})
 
 
 while True:
