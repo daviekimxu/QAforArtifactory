@@ -2,7 +2,7 @@ import os, sys
 import time
 import subprocess
 import configparser
-from shutil import copyfile #to move settings.xml
+import shutil
 import requests
 import json
 
@@ -40,27 +40,30 @@ if "Artifactory" in config:
 else:
 	exit()
 
-#get github
-if "GitHub" in config:
+samples{
+	'maven' : 'maven'
+	#
+	#
+	#
+	#
+}
 
-	mavenurl=["GitHub"],["mavenurl"]
-	npmurl=["Github"],["npmurl"]
-else:
-	exit()
+for k, v in samples.items():
+	with cd ('Samples'):
+		shutil.copytree(k,'../' +v)
 
+#makedictionary local directories 
+#localdirs={
+#		'MavenQA': mavenurl,
+#		'NPMQA': npmurl
+#	}
 
-#makedictionary local directories, pull clone from Github
-localdirs={
-		'MavenQA': mavenurl,
-		'NPMQA': npmurl
-	}
-
-for k, v in localdirs.items():
-
-	subprocess.call("mkdir " + k)
-	
-	with cd('./'+k):
-		subprocess.call("git clone " +v) #need a way to clone subdirectories
+#for k, v in localdirs.items():
+#
+#	subprocess.call("mkdir " + k)
+#	
+#	with cd('./'+k):
+#		subprocess.call("git clone " +v) #need a way to clone subdirectories
 
 #subprocess.call(docker pull arturl/dockerhub:busybox)
 
@@ -88,7 +91,7 @@ subprocess.call("groovy ./cleanup.groovy")
 
 
 #clean local directory
-subprocess.call("rm -Rf MavenQA NPMQA")
+subprocess.call("rm -Rf Maven NPM")
 subprocess.call("docker -rm busybox")
 
 

@@ -22,7 +22,7 @@ need way to clone subdirectories
 
 *maven-done
 docker need nginx config, script done
-generic
+generic -deploy, tag, search, delete
 
 npm - need npmrc, nvm, where else is npm intalled on local machine?
 

@@ -23,10 +23,9 @@ if "Artifactory" in config:
 else:
 	exit()
 
-os.chdir("./MavenQA")
+os.chdir("maven")
 	
-subprocess.call("mvn -install")
-subprocess.call("mvn -Deploy") #syntax needed
+subprocess.call("mvn install")
 
 #assign properties to make our lives easier
 url = arturl + "artifactory/api/storage/"
@@ -54,5 +53,5 @@ r=requests.get(artul+searchapi, auth=(user:password))
 print (r.content)
 
 #delete .m2/repository
-subprocess.call("rm -rf ~/,m2/repository")
+subprocess.call("rm -rf ~/.m2/repository")
 
