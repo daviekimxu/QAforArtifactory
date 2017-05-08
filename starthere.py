@@ -40,7 +40,7 @@ if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an int
 	subprocess.call("apt-get install maven", shell=True)
 	
 else: #is this a good condition
-	shutil.copyfile("settings.xml", "~/.m2/settings.xml")
+	shutil.copyfile("settings.xml", "/usr/share/maven/conf/settings.xml")
 
 #repeat for NPM
 """if subprocess.call(npm install) == "npm:command not found":
