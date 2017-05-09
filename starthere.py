@@ -89,7 +89,7 @@ with cd("./ArtRepoJsons"):
 
 	for k, v in reponame.items():
 		
-		filepath=os.getcwd()+v+'.json'
+		filepath=os.getcwd()+'/'+v+'.json'
 		with open(filepath) as data_file:
 			mydata= json.dumps(json.load(data_file))
 
