@@ -93,7 +93,9 @@ with cd("./ArtRepoJsons"):
 		with open(filepath) as data_file:
 			mydata= json.dumps(json.load(data_file))
 
-			requests.put(url+v, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
+			response=requests.put(url+v, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
+			print(response.text)
+
 
 #loop operations script
 """while True:
