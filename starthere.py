@@ -76,8 +76,8 @@ else:
 #create repositories via RESTAPI
 #dictionary for repos.  Moved to setup, as these need to be created once
 reponame={
-	'mvn-local-RELEASE':'mvn-local-RELEASE',
-	'mvn-local-SNAPSHOT':'mvn-local-SNAPSHOT', 
+	#'mvn-local-RELEASE':'mvn-local-RELEASE',
+	#'mvn-local-SNAPSHOT':'mvn-local-SNAPSHOT', 
 	"jcenter":"jcenter",
 	
 	#'docker' : 'docker-local'
@@ -95,8 +95,8 @@ with cd("./ArtRepoJsons"):
 
 			requests.put(url+v, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
-
-while True:
+#loop operations script
+"""while True:
 	if input():
 		break
 		#delete repos
@@ -109,4 +109,4 @@ while True:
 		subprocess.call("./operations.py")
 		time.sleep(10)
 
-	
+"""	
