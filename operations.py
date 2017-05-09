@@ -33,9 +33,9 @@ class cd:  #basic context manager
 config.read("properties.ini") 
 if "Artifactory" in config:
 
-	arturl= config["Artifactory"]["artifactoryurl"]
-	user= config["Artifactory"]["admin"]	
-	password=config["Artifactory"]["password"]
+	arturl= config.get("Artifactory","artifactoryurl")
+	user= config.get("Artifactory", "admin")	
+	password=config.get("Artifactory","password")
 	
 else:
 	exit()

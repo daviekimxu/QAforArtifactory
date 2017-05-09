@@ -16,9 +16,9 @@ password=""
 
 config.read("properties.ini")
 if "Artifactory" in config:
-	arturl=["Artifactory"],["artifactoryurl"]
-	user=["Artifactory"],["user"]
-	password=["Artifactory"],["password"]
+	arturl= config.get("Artifactory","artifactoryurl")
+	user= config.get("Artifactory", "admin")	
+	password=config.get("Artifactory","password")
 
 else:
 	exit()

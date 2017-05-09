@@ -67,9 +67,9 @@ npmurl=""
 
 config.read("properties.ini")
 if "Artifactory" in config:
-	arturl=["Artifactory"],["artifactoryurl"]
-	user=["Artifactory"],["user"]
-	password=["Artifactory"],["password"]
+	arturl=config.get("Artifactory","artifactoryurl")
+	user= config.get("Artifactory","user")
+	password=config.get("Artifactory","password")
 
 else:
 	exit()
@@ -85,8 +85,7 @@ reponame={
 
 	}
 with cd("./ArtRepoJsons"):
-	put="artifactory/api/repositories/"
-	url=arturl+put
+	url=arturl+"artifactory/api/repositories/"
 
 	for k, v in reponame.items():
 		
