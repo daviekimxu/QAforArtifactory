@@ -3,7 +3,7 @@ import subprocess
 import requests
 import shutil
 import time
-
+import json
 
 
 #get PIP.  Might be better to prepackage requests 
