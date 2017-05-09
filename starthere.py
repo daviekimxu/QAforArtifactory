@@ -57,6 +57,22 @@ else: #is this a good condition
 """repeat"""
 
 
+
+
+arturl=""
+user=""
+password=""
+mavenurl=""
+npmurl=""
+
+config.read("properties.ini")
+if "Artifactory" in config:
+	arturl=["Artifactory"],["artifactoryurl"]
+	user=["Artifactory"],["user"]
+	password=["Artifactory"],["password"]
+
+else:
+	exit()
 #create repositories via RESTAPI
 #dictionary for repos.  Moved to setup, as these need to be created once
 reponame={
