@@ -89,10 +89,11 @@ with cd("./ArtRepoJsons"):
 
 	for k, v in reponame.items():
 		
-		filepath=v+'.json'
-		with open(filepath) as fh:
-			mydata=fh.read() 
-			requests.put(url+v,auth=(user, password),headers={"Content-type":"application/json"},params={'file':filepath})
+		filepath=os.getcwd()+v+'.json'
+		with open(filepath) as data_file:
+			mydata= json.dumps(json.load(data_file))
+
+			requests.put(url+v, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
 
 while True:
