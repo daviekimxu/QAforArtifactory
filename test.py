@@ -39,8 +39,8 @@ reponame={
 	'mvn-local-SNAPSHOT':'/mvn-local-SNAPSHOT.json', 
 	"jcenter":"/jcenter.json",
 	
-	#'docker' : 'docker-local'
-	#'dockerhub' : 'dockerhub'
+	#'docker' : 'docker-local.json'
+	#'dockerhub' : 'dockerhub.json'
 
 	}
 with cd ("./ArtRepoJsons"):

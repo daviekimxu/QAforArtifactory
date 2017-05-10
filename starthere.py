@@ -98,7 +98,7 @@ with cd ("./ArtRepoJsons"):
 
 
 #loop operations script
-"""while True:
+while True:
 	if input():
 		break
 		#delete repos
@@ -111,4 +111,3 @@ with cd ("./ArtRepoJsons"):
 		subprocess.call("./operations.py")
 		time.sleep(10)
 
-"""	

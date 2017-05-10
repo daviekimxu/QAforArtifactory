@@ -63,21 +63,14 @@ with cd('./RepoScripts'):
 	for k, v in reposcripts.items():
 		subprocess.call('python ' + v )
 
-#subprocess.call("run-parts ./RepoScripts")
-
-#search
-"""searchapi= "artifactory/api/search/prop?QA=TEST"
-r=requests.get(artul+searchapi, auth=(user:password))
-print (r.content) """
-
 #Delete artifacts via AQL search of repositories
 subprocess.call("groovy ./cleanup.groovy")
 
 
 #clean local directory
-subprocess.call("rm -Rf Maven NPM")
+subprocess.call("rm -Rf maven NPM")
 subprocess.call("docker -rm busybox")
 
-
+exit()
 
 

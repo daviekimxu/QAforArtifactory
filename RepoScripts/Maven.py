@@ -55,3 +55,4 @@ print (r.content)
 #delete .m2/repository
 subprocess.call("rm -rf ~/.m2/repository")
 
+exit()
