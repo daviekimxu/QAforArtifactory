@@ -35,8 +35,8 @@ else:
 #create repositories via RESTAPI
 #dictionary for repos.  Moved to setup, as these need to be created once
 reponame={
-	#'mvn-local-RELEASE':'mvn-local-RELEASE',
-	#'mvn-local-SNAPSHOT':'mvn-local-SNAPSHOT', 
+	'mvn-local-RELEASE':'/mvn-local-RELEASE.json',
+	'mvn-local-SNAPSHOT':'/mvn-local-SNAPSHOT.json', 
 	"jcenter":"/jcenter.json",
 	
 	#'docker' : 'docker-local'
@@ -52,8 +52,6 @@ with cd ("./ArtRepoJsons"):
 		
 		print(filepath)
 		with open(filepath) as data_file:
-			mydata= json.dumps(json.loads(data_file))
+			mydata= json.dumps(json.load(data_file))
 			print(mydata)
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
-			print(response.text)
-		

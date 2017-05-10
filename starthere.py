@@ -76,25 +76,25 @@ else:
 #create repositories via RESTAPI
 #dictionary for repos.  Moved to setup, as these need to be created once
 reponame={
-	#'mvn-local-RELEASE':'mvn-local-RELEASE',
-	#'mvn-local-SNAPSHOT':'mvn-local-SNAPSHOT', 
-	"jcenter":"jcenter",
+	'mvn-local-RELEASE':'/mvn-local-RELEASE.json',
+	'mvn-local-SNAPSHOT':'/mvn-local-SNAPSHOT.json', 
+	"jcenter":"/jcenter.json",
 	
 	#'docker' : 'docker-local'
 	#'dockerhub' : 'dockerhub'
 
 	}
-with cd("./ArtRepoJsons"):
+with cd ("./ArtRepoJsons"):
 	url=arturl+"artifactory/api/repositories/"
 
 	for k, v in reponame.items():
 		
-		filepath=os.getcwd()+'/'+v+'.json'
+		filepath=os.getcwd()+v
+		
+		print(filepath)
 		with open(filepath) as data_file:
 			mydata= json.dumps(json.load(data_file))
-
-			response=requests.put(url+v, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
-			print(response.text)
+			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
 
 #loop operations script

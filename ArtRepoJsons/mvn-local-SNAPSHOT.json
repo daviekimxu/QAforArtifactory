@@ -14,6 +14,6 @@
   "handleSnapshots": true,
   "maxUniqueSnapshots": 0,
  
-  "suppressPomConsistencyChecks": false,
+  "suppressPomConsistencyChecks": false
 
 }
