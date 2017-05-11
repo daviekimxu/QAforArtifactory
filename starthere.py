@@ -41,6 +41,7 @@ if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an int
 	
 else: #need root permissions
 	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
+	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
 
 
 #repeat for NPM
