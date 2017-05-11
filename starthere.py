@@ -40,7 +40,7 @@ if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an int
 	subprocess.call("apt-get install maven", shell=True)
 	
 else: #is this a good condition
-	shutil.move("./settings.xml", "/usr/share/maven/conf.settings.xml")
+	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
 
 #repeat for NPM
 """if subprocess.call(npm install) == "npm:command not found":
@@ -101,6 +101,7 @@ with cd ("./ArtRepoJsons"):
 while True:
 	if input():
 		break
+		exit()
 		#delete repos
 		#for k, v in reponame.items():
 		#	requests.delete(artul+'artifactory/'+v,
