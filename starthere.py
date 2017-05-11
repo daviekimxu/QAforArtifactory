@@ -39,7 +39,7 @@ if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an int
 	subprocess.call("apt-get update")
 	subprocess.call("apt-get install maven", shell=True)
 	
-else: #is this a good condition
+else: #need root permissions
 	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
 
 #repeat for NPM
