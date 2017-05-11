@@ -51,10 +51,12 @@ requests.post(recalculateurl+repo2)
 
 #search by properties - additional search per native package type
 searchapi= "artifactory/api/search/prop?QA=TEST"
-r=requests.get(artul+searchapi, auth=(user:password))
+r=requests.get(arturl+searchapi, auth=(user,password))
 print (r.content)
 
 #delete .m2/repository
-subprocess.call("rm -rf ~/.m2/repository")
+home = expanduser("~")
+os.chdir(home+'/.m2')
+subprocess.call("rm -rf repository" shell=True)
 
 exit()
