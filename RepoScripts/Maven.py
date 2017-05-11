@@ -4,6 +4,8 @@ import time
 import configparser
 import requests
 import json
+from os.path import expanduser
+
 
 config=configparser.ConfigParser()
 config.sections()
@@ -16,8 +18,8 @@ password=""
 
 config.read("properties.ini")
 if "Artifactory" in config:
-	arturl= config.get("Artifactory","artifactoryurl")
-	user= config.get("Artifactory", "admin")	
+	arturl=config.get("Artifactory","artifactoryurl")
+	user= config.get("Artifactory","user")
 	password=config.get("Artifactory","password")
 
 else:
@@ -25,7 +27,7 @@ else:
 
 os.chdir("maven")
 	
-subprocess.call("mvn install")
+process = subprocess.Popen('mvn install',shell=True)
 
 #assign properties to make our lives easier
 url = arturl + "artifactory/api/storage/"

@@ -16,10 +16,10 @@ if "Artifactory" in config:
 	user=["Artifactory"],["user"]
 
 subprocess.call("docker login -u user -p password arturl")
-subprocess.call("docker tag busybox http://104.199.127.225:12002/QAbusybox"). #need cleaner solution for this
-subprocess.call("docker push http://104.199.127.225:12002/QAbusybox")
+subprocess.call("docker tag busybox http://104.199.127.225:12002/artifactory:QAbusybox"). #need cleaner solution for this
+subprocess.call("docker push http://104.199.127.225:12002/artifactory:QAbusybox")
 
-subprocess.call("docker search http://104.199.127.225:12002/QAbusybox") 
+subprocess.call("docker search http://104.199.127.225:12002/artifactory:QAbusybox") 
 
 exit()
 

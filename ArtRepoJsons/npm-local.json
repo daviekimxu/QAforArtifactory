@@ -1,0 +1,7 @@
+{
+  "key": "npm-local",
+  "rclass" : "local",
+  "packageType": "npm", 
+  "description": "The local repository npm repository"
+
+}
