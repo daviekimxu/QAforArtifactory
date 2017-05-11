@@ -38,9 +38,11 @@ config.sections()
 if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
 	subprocess.call("apt-get update")
 	subprocess.call("apt-get install maven", shell=True)
+	break
 	
 else: #need root permissions
 	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
+
 
 #repeat for NPM
 """if subprocess.call(npm install) == "npm:command not found":
@@ -96,7 +98,7 @@ with cd ("./ArtRepoJsons"):
 			mydata= json.dumps(json.load(data_file))
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
-
+"""
 #loop operations script
 while True:
 	if input():
@@ -111,4 +113,4 @@ while True:
 	else:
 		subprocess.call("./operations.py")
 		time.sleep(10)
-
+"""
