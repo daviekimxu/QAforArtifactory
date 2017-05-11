@@ -38,7 +38,6 @@ config.sections()
 if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
 	subprocess.call("apt-get update")
 	subprocess.call("apt-get install maven", shell=True)
-	break
 	
 else: #need root permissions
 	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
