@@ -56,5 +56,5 @@ with cd ("./ArtRepoJsons"):
 			mydata= json.dumps(json.load(data_file))
 			print(mydata)
 
-			my_config = {'verbose': sys.stderr}
-			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata, config=my_config)
+			
+			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
