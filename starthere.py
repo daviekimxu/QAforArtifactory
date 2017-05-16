@@ -120,5 +120,5 @@ while True:
 		#	)
 
 	else:
-		process = subprocess.Popen('python operations.py',shell=True)
+		process = subprocess.call('python operations.py',shell=True)
 		time.sleep(10)
