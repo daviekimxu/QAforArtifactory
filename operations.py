@@ -61,7 +61,7 @@ reposcripts={
 
 with cd('./RepoScripts'):
 	for k, v in reposcripts.items():
-		subprocess.call('python ' + v )
+		subprocess.call('python ' + v +'.py' )
 
 #Delete artifacts via AQL search of repositories
 subprocess.call("groovy ./cleanup.groovy")
