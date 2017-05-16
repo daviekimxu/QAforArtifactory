@@ -109,7 +109,7 @@ with cd ("./ArtRepoJsons"):
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
 #loop operations script
-"""while True:
+while True:
 	if input():
 		break
 		exit()
@@ -122,4 +122,3 @@ with cd ("./ArtRepoJsons"):
 	else:
 		process = subprocess.Popen('python operations.py',shell=True)
 		time.sleep(10)
-""""
