@@ -1,0 +1,12 @@
+{
+  "key": "generic-local",
+  "rclass" : "local",
+   "packageType": "generic",
+   "description": "a generic repo",
+   "notes": "Some internal notes",
+  "repoLayoutRef" : "maven-2-default",
+  
+   "checksumPolicyType": "client-checksums",
+   "blackedOut": false,
+ 
+}

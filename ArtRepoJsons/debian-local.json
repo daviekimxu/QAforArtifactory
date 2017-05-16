@@ -1,0 +1,12 @@
+{
+   "key": "debian-local",
+   "rclass" : "local",
+   "packageType":  "debian",
+   "description": "The local debian repository",
+   "notes": "Some internal notes",
+   "includesPattern": "**/*" ,
+   "excludesPattern": "",
+   "repoLayoutRef" : "maven-2-default",
+   "debianTrivialLayout" : false,
+   "checksumPolicyType": "client-checksums"
+}

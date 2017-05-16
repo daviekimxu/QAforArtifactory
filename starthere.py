@@ -34,7 +34,8 @@ config.sections()
 #Set up reverse proxy for Docker.  Consult Arturo
 
 #check if package managers/software are installed.  If not, install them.
-#maven
+
+#maven#################################################################################################################################################
 if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
 	subprocess.call("apt-get update")
 	subprocess.call("apt-get install maven", shell=True)
@@ -44,19 +45,27 @@ else: #need root permissions
 	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
 
 
-#repeat for NPM
+#NPM###################################################################################################################################################
 """if subprocess.call(npm install) == "npm:command not found":
 	subprocess.call("./nvminstall.sh")
 	
 
  else
-	shutil.copyfile(".npmrc, ~/.npmrc")
+	shutil.copyfile(".npmrc, ~/.npmrc") #needs home = os.path.expanduser, then copyfile and move
 """
 
-"""#repeat for gradle"""
+#repeat for gradle#####################################################################################################################################
 
 
 """repeat"""
+#ivy####################################################################################################################################################
+
+#ruby###################################################################################################################################################
+
+#rpm####################################################################################################################################################
+
+#generic################################################################################################################################################
+#download file with requests.get
 
 
 
@@ -99,9 +108,8 @@ with cd ("./ArtRepoJsons"):
 			print(mydata)
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
-"""
 #loop operations script
-while True:
+"""while True:
 	if input():
 		break
 		exit()
@@ -114,4 +122,4 @@ while True:
 	else:
 		process = subprocess.Popen('python operations.py',shell=True)
 		time.sleep(10)
-"""
+""""

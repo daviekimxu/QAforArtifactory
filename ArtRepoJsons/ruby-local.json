@@ -1,0 +1,16 @@
+{
+   "key": "ruby-local",
+   "rclass" : "local",
+   "packageType": "gems" ,
+   "description": "local ruby gem repo",
+   "notes": "Some internal notes",
+   "includesPattern": "**/*",
+   "excludesPattern": "" ,
+   "repoLayoutRef" : "maven-2-default",
+
+   "checksumPolicyType": "client-checksums" ,
+   "snapshotVersionBehavior": "non-unique",
+   "blackedOut": false,
+   "propertySets": ["ps1", "ps2"],
+   "archiveBrowsingEnabled" : false,
+}

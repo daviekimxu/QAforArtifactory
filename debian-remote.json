@@ -1,0 +1,12 @@
+{
+   "key": "debian-remote",
+   "rclass" : "remote",
+   "packageType": "debian", 
+   "url" : "http://archive.ubuntu.com/ubuntu/",
+   "description": "The remote repository public description",
+   "notes": "Some internal notes",
+   "includesPattern": "**/*",
+   "excludesPattern": "" ,
+   "repoLayoutRef" : "maven-2-default",
+   "remoteRepoChecksumPolicyType": "generate-if-absent" 
+ }

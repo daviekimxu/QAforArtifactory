@@ -1,0 +1,18 @@
+
+{
+   "key": "ivy-release",
+   "rclass" : "local",
+   "packageType": "ivy",
+   "description": "local ivy release repo",
+   "notes": "Some internal notes",
+   "includesPattern": "**/*",
+   "excludesPattern": "",
+   "repoLayoutRef" : "maven-2-default",
+   "debianTrivialLayout" : false,
+   "checksumPolicyType": "client-checksums",
+   "handleReleases": true,
+   "handleSnapshots": false,
+   "maxUniqueSnapshots": 0 ,
+   "maxUniqueTags": 0,
+   "snapshotVersionBehavior":  "non-unique" ,
+}

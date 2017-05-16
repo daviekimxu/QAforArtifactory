@@ -1,0 +1,16 @@
+
+{
+  "key": "gradle-dev",
+  "rclass" : "local",
+  "packageType": "gradle",
+  "description": "local gradle-dev",
+  "notes": "Some internal notes",
+  "includesPattern": "**/*",
+  "excludesPattern": "",
+  "repoLayoutRef" : "maven-2-default",
+  "debianTrivialLayout" : false,
+  "checksumPolicyType": "client-checksums",
+  "handleReleases": false,
+  "handleSnapshots": true,
+
+}

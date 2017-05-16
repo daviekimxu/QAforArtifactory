@@ -1,24 +1,15 @@
 {
   "key": "docker-local",
    "rclass" : "local",
-   "packageType": "docker" 
+   "packageType": "docker", 
    "description": "Docker QA",
-  "notes": "Some internal notes",
-  // "includesPattern": "**/*" (default),
-  //"excludesPattern": "" (default),
-  // "repoLayoutRef" : "maven-2-default",
-  // "debianTrivialLayout" : false,
+   "notes": "Some internal notes",
+
    "checksumPolicyType": "client-checksums", 
-  //"handleReleases": true (default),
-  // "handleSnapshots": true (default),
-  // "maxUniqueSnapshots": 0 (default),
+
    "maxUniqueTags": 0, 
-  // "snapshotVersionBehavior": "unique" | "non-unique" (default) | "deployer",
-  // "suppressPomConsistencyChecks": false (default),
-  // "blackedOut": false (default),
+
    "propertySets": [],
-  // "archiveBrowsingEnabled" : false,
-  // "calculateYumMetadata" : false,
-  // "yumRootDepth" : 0,
+
    "dockerApiVersion" : "V2" 
 }

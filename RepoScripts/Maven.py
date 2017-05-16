@@ -55,7 +55,7 @@ r=requests.get(arturl+searchapi, auth=(user,password))
 print (r.content)
 
 #delete .m2/repository
-home = expanduser("~")
+home = os.path.expanduser("~")
 os.chdir(home+'/.m2')
 subprocess.call("rm -rf repository" shell=True)
 

@@ -1,0 +1,13 @@
+
+{
+  "key": "pypi-local",
+  "rclass" : "local",
+  "packageType": "pypi", 
+  "description": "local pypi-repo",
+  "notes": "Some internal notes",
+  "includesPattern": "**/*",
+  "excludesPattern": "",
+  "repoLayoutRef" : "maven-2-default",
+  "checksumPolicyType": "client-checksums",
+ 
+}

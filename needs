@@ -18,7 +18,7 @@ reverse proxy via nginx in docker
 search need to be performed natively - in progress
 *do not delete repos, only clear cache done
 
-need way to clone subdirectories
+#need way to clone subdirectories
 
 *maven-done
 docker need nginx config, script done
@@ -26,10 +26,12 @@ generic -deploy, tag, search, delete
 
 npm - need npmrc, nvm, where else is npm intalled on local machine?
 
-gradle neet github, script, and properties
+gradle neet #github, script, and properties in project directory
 
 rpm - 
 pypi - 
+ivy
+ruby
 
 
 
