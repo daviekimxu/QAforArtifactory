@@ -40,7 +40,7 @@ if "Artifactory" in config:
 else:
 	exit()
 
-samples{
+samples={
 	'maven' : 'maven'
 	#
 	#
