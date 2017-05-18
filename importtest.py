@@ -7,4 +7,4 @@ import os
 
 print(os.getcwd())
 
-subprocess.Popen('groovy cleanup.groovy')
+subprocess.Popen('/usr/bin/env groovy cleanup.groovy')
