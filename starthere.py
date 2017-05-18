@@ -20,13 +20,14 @@ class cd:  #basic context manager
 	def __exit__(self, etype, value, traceback):
 		os.chdir(self.savedPath)
 
-if subprocess.call('pip')=="The program 'pip' is currently not installed. To run 'pip' please ask your administrator to install the package 'python-pip'":
+"""if subprocess.call('pip')=="The program 'pip' is currently not installed. To run 'pip' please ask your administrator to install the package 'python-pip'":
 	subprocess.call('apt-get update')
 	subprocess.call('apt-get install python-pip', shell=True)
 	subprocess.call('easy_install pip', shell=True)
 else:
 	subprocess.call('pip install requests', shell=True)
 	subprocess.call('pip install configparser', shell=True)
+"""
 
 import requests
 import configparser
