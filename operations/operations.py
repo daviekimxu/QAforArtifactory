@@ -1,6 +1,6 @@
 
 
-def run(a, b, c):
+def run(arturl, user, password):
 	from mavenops import mavenops
 	import os, sys
 	import time
@@ -22,13 +22,7 @@ def run(a, b, c):
 			os.chdir(self.savedPath)
 
 
-	arturl=""
-	user=""
-	password=""
-
-	arturl=a
-	user=b
-	password=c
+	
 	
 	samples={
     	'maven' : 'maven'
@@ -46,7 +40,7 @@ def run(a, b, c):
 	
 		
 	#Delete artifacts via AQL search of repositories
-	subprocess.call("/usr/bin/env groovy cleanup.groovy")
+	#subprocess.call("/usr/bin/env","cleanup.groovy")
 
 
 	#clean local directory

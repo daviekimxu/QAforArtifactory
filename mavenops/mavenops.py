@@ -1,7 +1,4 @@
-def run(a, b, c):
-	arturl=""
-	user=""
-	password=""
+def run(arturl, user, password):
 
 	import os, sys
 	import subprocess
@@ -9,9 +6,6 @@ def run(a, b, c):
 	import json
 	from os.path import expanduser
 
-	arturl=a
-	user=b
-	password=c
 	
 	start= os.getcwd()
 	os.chdir("maven")
