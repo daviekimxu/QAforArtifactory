@@ -106,7 +106,7 @@ with cd ("./ArtRepoJsons"):
 		
 		print(filepath)
 		with open(filepath) as data_file:
-			mydata= json.dumps(json.load(data_file))cd Q
+			mydata= json.dumps(json.load(data_file))
 			print(mydata)
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
