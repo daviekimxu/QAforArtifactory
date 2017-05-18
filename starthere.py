@@ -37,13 +37,13 @@ config.sections()
 #check if package managers/software are installed.  If not, install them.
 
 #maven#################################################################################################################################################
-#if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
-#	subprocess.call("apt-get update")
-#	subprocess.call("apt-get install maven", shell=True)
+if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
+	subprocess.call("apt-get update")
+	subprocess.call("apt-get install maven", shell=True)
 	
-#else: #need root permissions
-#	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
-#	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
+else: #need root permissions
+	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
+	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
 
 
 #NPM###################################################################################################################################################
@@ -105,7 +105,7 @@ with cd ("./ArtRepoJsons"):
 		
 		print(filepath)
 		with open(filepath) as data_file:
-			mydata= json.dumps(json.load(data_file))
+			mydata= json.dumps(json.load(data_file))cd Q
 			print(mydata)
 			response=requests.put(url+k, auth=(user, password), headers={"Content-type":"application/json"}, data=mydata)
 
