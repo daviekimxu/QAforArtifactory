@@ -37,23 +37,23 @@ config.sections()
 #check if package managers/software are installed.  If not, install them.
 
 #maven#################################################################################################################################################
-if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
-	subprocess.call("apt-get update")
-	subprocess.call("apt-get install maven", shell=True)
+#if subprocess.call("mvn -version", shell=True) =="'mvn' not recognized as an internal or external command":
+#	subprocess.call("apt-get update")
+#	subprocess.call("apt-get install maven", shell=True)
 	
-else: #need root permissions
-	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
-	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
+#else: #need root permissions
+#	shutil.move("./settings.xml", "/usr/share/maven/conf/settings.xml")
+#	shutil.copyfile("/usr/share/maven/conf/settings.xml", "./settings.xml")
 
 
 #NPM###################################################################################################################################################
-"""if subprocess.call(npm install) == "npm:command not found":
-	subprocess.call("./nvminstall.sh")
+#"""if subprocess.call(npm install) == "npm:command not found":
+#	subprocess.call("./nvminstall.sh")
 	
 
- else
-	shutil.copyfile(".npmrc, ~/.npmrc") #needs home = os.path.expanduser, then copyfile and move
-"""
+# else
+#	shutil.copyfile(".npmrc, ~/.npmrc") #needs home = os.path.expanduser, then copyfile and move
+#"""
 
 #repeat for gradle#####################################################################################################################################
 
@@ -111,5 +111,5 @@ with cd ("./ArtRepoJsons"):
 
 #loop operations script
 while True:
-		operations(arturl, user, password)
+		operations.run(arturl, user, password)
 		
