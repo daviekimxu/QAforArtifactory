@@ -7,6 +7,8 @@ import json
 from os.path import expanduser
 
 
+
+
 config=configparser.ConfigParser()
 config.sections()
 
@@ -59,4 +61,3 @@ home = os.path.expanduser("~")
 os.chdir(home+'/.m2')
 subprocess.call("rm -rf repository" shell=True)
 
-exit()

@@ -4,6 +4,7 @@ import requests
 import shutil
 import time
 import json
+from operations import operations
 
 
 #get PIP.  Might be better to prepackage requests 
@@ -120,5 +121,5 @@ while True:
 		#	)
 
 	else:
-		process = subprocess.call('python operations.py',shell=True)
+		operations(arturl, user, password)
 		time.sleep(10)
