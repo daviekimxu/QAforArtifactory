@@ -44,5 +44,6 @@ def run(arturl, user, password):
 
 
 	#clean local directory
-	subprocess.call("rm -Rf maven NPM")
+	for k, v in samples.items(): 
+		subprocess.call(['rm', '-rf', v])
 	
