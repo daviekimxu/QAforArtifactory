@@ -40,7 +40,7 @@ def run(arturl, user, password):
 	
 		
 	#Delete artifacts via AQL search of repositories
-	#subprocess.call("/usr/bin/env","cleanup.groovy")
+	subprocess.call(["groovy","cleanup.groovy"])
 
 
 	#clean local directory
