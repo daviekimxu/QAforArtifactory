@@ -29,7 +29,7 @@ def run(arturl, user, password):
     	}
 
 	for k, v in samples.items():
-
+		subprocess.call(['rm', '-rf', v])
 		with cd ('Samples'):
 			
 			shutil.copytree(k,'../' +v) 

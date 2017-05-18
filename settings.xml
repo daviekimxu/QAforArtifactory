@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>admin</username>
-      <password>AP657bjXkep1xmXzAkfLhhQrda1</password>
+      <password>password</password>
       <id>central</id>
     </server>
     <server>
       <username>admin</username>
-      <password>AP657bjXkep1xmXzAkfLhhQrda1</password>
+      <password>password</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -22,7 +22,7 @@
           </snapshots>
           <id>central</id>
           <name>mvn-local-RELEASE</name>
-          <url>http://0.0.0.0:12002/artifactory/mvn-local-RELEASE</url>
+          <url>http://0.0.0.0:12002/artifactory/jcenter</url>
         </repository>
         <repository>
           <snapshots />
