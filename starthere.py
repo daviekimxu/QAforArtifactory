@@ -111,15 +111,5 @@ with cd ("./ArtRepoJsons"):
 
 #loop operations script
 while True:
-	if input():
-		break
-		exit()
-		#delete repos
-		#for k, v in reponame.items():
-		#	requests.delete(artul+'artifactory/'+v,
-		#	auth=(user:password)
-		#	)
-
-	else:
 		operations(arturl, user, password)
-		time.sleep(10)
+		
