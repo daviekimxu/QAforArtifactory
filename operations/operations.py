@@ -26,7 +26,7 @@ def run(arturl, user, password):
 	
 	samples={
     	'maven' : 'maven'
-    	'gradle':'gradle'
+    	'gradle' : 'gradle'
     	}
 
 	for k, v in samples.items():
