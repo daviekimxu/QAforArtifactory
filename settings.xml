@@ -22,13 +22,13 @@
           </snapshots>
           <id>central</id>
           <name>mvn-local-RELEASE</name>
-          <url>http://0.0.0.0:12002/artifactory/jcenter</url>
+          <url>http://http://104.199.127.225:12002/artifactory/jcenter</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
           <name>mvn-local-SNAPSHOT</name>
-          <url>http://0.0.0.0:12002/artifactory/mvn-local-SNAPSHOT</url>
+          <url>http://http://104.199.127.225:12002/artifactory/mvn-local-SNAPSHOT</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -38,13 +38,13 @@
           </snapshots>
           <id>central</id>
           <name>mvn-local-RELEASE</name>
-          <url>http://0.0.0.0:12002/artifactory/mvn-local-RELEASE</url>
+          <url>http://http://104.199.127.225:12002/mvn-local-RELEASE</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
           <name>mvn-local-SNAPSHOT</name>
-          <url>http://0.0.0.0:12002/artifactory/mvn-local-SNAPSHOT</url>
+          <url>http://http://104.199.127.225:12002/mvn-local-SNAPSHOT</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>

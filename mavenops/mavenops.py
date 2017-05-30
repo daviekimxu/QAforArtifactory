@@ -20,8 +20,6 @@ def run(arturl, user, password):
 
 	r=requests.put(url+repo1+prop, auth=(user, password))
 	r=requests.put(url+repo2+prop, auth=(user, password))
-
-
 	
 	reindexurl = arturl+"artifactory/api/maven?repos="
 	reindexforce="&force=1"
@@ -29,8 +27,8 @@ def run(arturl, user, password):
 	requests.post(reindexurl+repo2+reindexforce, auth=(user, password))
 
 	recalculateurl=arturl+"artifactory/api/maven/calculateMetadata/"
-	requests.post(recalculateurl+repo1)
-	requests.post(recalculateurl+repo2)
+	requests.post(recalculateurl+repo1, auth=(user, password))
+	requests.post(recalculateurl+repo2, auth=(user, password))
 
 
 	searchapi= "artifactory/api/search/prop?QA=TEST"
@@ -40,7 +38,8 @@ def run(arturl, user, password):
 
 	home = os.path.expanduser("~")
 	os.chdir(home+'/.m2')
-	subprocess.call("rm -rf repository", shell=True)
+	subprocess.call(["rm ", "-rf ", "repository"], shell=True)
+	subprocess.call ("mkdir repository", shell =True)
 
 	os.chdir(start)
 
