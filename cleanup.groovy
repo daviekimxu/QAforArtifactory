@@ -7,7 +7,7 @@ import org.apache.http.conn.HttpHostConnectException
  * Created by shaybagants on 4/30/15.
  */
 
-def query = 'items.find({"repo":"jcenter-cache", "mvn-local-SNAPSHOT", "mvn-local-RELEASE", "docker-local", "dockerhub-cache"})' // replace this with your AQL query
+def query = 'items.find({"repo" : "jcenter-cache"}'// replace this with your AQL query
 
 def artifactoryURL = 'http://104.199.127.225:12002/artifactory/' // replace this with your Artifactory server
 def restClient = new RESTClient(artifactoryURL)
