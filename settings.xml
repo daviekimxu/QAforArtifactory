@@ -38,13 +38,13 @@
           </snapshots>
           <id>central</id>
           <name>mvn-local-RELEASE</name>
-          <url>http://104.199.127.225:12002/mvn-virtual-RELEASE</url>
+          <url>http://104.199.127.225:12002/artifactory/mvn-virtual-RELEASE</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
           <name>mvn-local-SNAPSHOT</name>
-          <url>http://104.199.127.225:12002/mvn-virtual-SNAPSHOT</url>
+          <url>http://104.199.127.225:12002/artifacory/mvn-virtual-SNAPSHOT</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
