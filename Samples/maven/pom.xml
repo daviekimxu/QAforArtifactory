@@ -7,6 +7,14 @@
     <packaging>pom</packaging>
     <name>Simple Multi Modules Build</name>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>eb69897f43e1-snapshots</name>
+            <url>http://104.199.127.225:12002/artifactory/mvn-local-SNAPSHOT</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <modules>
         <module>multi1</module>
         <module>multi2</module>
