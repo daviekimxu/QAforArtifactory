@@ -47,13 +47,6 @@
           <url>http://104.199.127.225:12002/artifacory/mvn-virtual-SNAPSHOT</url>
         </pluginRepository>
       </pluginRepositories>
-      <distributionManagement>
-        <snapshotRepository>
-          <id>snapshots</id>
-          <name>119a60dc3f5d-snapshots</name>
-          <url>http://104.199.127.225:12002/artifactory/mvn-local-SNAPSHOT</url>
-        </snapshotRepository>
-      </distributionManagement>
       <id>artifactory</id>
     </profile>
   </profiles>
