@@ -6,6 +6,6 @@
    "description": "The virtual repository public description",
    "artifactoryRequestsCanRetrieveRemoteArtifacts": true,
 
-   "pomRepositoryReferencesCleanupPolicy": "discard_active_reference" ,
+   "pomRepositoryReferencesCleanupPolicy": "discard_active_reference",
    "defaultDeploymentRepo": "mvn-local-SNAPSHOT"
 }

@@ -92,6 +92,8 @@ reponame={
 	'mvn-local-RELEASE':'/mvn-local-RELEASE.json',
 	'mvn-local-SNAPSHOT':'/mvn-local-SNAPSHOT.json', 
 	"jcenter":"/jcenter.json",
+	"mvn-virtual-SNAPSHOT":"/mvn-virtual-SNAPSHOT.json",
+	"mvn-virtual-RELEASE" : "/mvn-virtual-RELEASE.json"
 	
 	#'docker' : 'docker-local.json'
 	#'dockerhub' : 'dockerhub.json'
