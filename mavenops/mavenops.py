@@ -38,7 +38,7 @@ def run(arturl, user, password):
 
 	home = os.path.expanduser("~")
 	os.chdir(home+'/.m2')
-	subprocess.call(["rm ", "-rf ", "repository"], shell=True)
+	subprocess.call(["rm -rf ", "repository"], shell=True)
 	subprocess.call ("mkdir repository", shell =True)
 
 	os.chdir(start)
