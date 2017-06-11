@@ -6,11 +6,23 @@ def run(arturl, user, password):
 	import json
 	from os.path import expanduser
 
+	class cd:  #basic context manager
+	"""Context manager for changing the current working directory"""
+	def __init__(self, newPath):
+		self.newPath = os.path.expanduser(newPath)
+
+	def __enter__(self):
+		self.savedPath = os.getcwd()
+		os.chdir(self.newPath)
+
+	def __exit__(self, etype, value, traceback):
+		os.chdir(self.savedPath)
 	
 	start= os.getcwd()
 	os.chdir("maven")
 	
 	process = subprocess.call('mvn install',shell=True)
+	process = subprocess.call('mvn deploy',shell=True)
 
 
 	url = arturl + "artifactory/api/storage/"
@@ -37,11 +49,13 @@ def run(arturl, user, password):
 
 
 	home = os.path.expanduser("~")
-	os.chdir(home+'/.m2')
-	subprocess.call(["rm -rf ", "repository"], shell=True)
-	subprocess.call ("mkdir repository", shell =True)
+	m2dir = os.chdir(home+'/.m2')
+	subprocess.call(["rm -rf repository"], shell=True)
+	#cd .m2/repository
+	 #cd rm -r *
+	with cd (m2dir):
+		subprocess.call(["rm ","-r ", "*"])
 
-	os.chdir(start)
 
 
 

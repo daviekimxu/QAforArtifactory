@@ -7,20 +7,12 @@ import org.apache.http.conn.HttpHostConnectException
  * Created by shaybagants on 4/30/15.
  */
 
-def query = 'items.find({ 
-    "$or" :[
-        {"repo": "jcenter-cache"},
-        {"repo": "mvn-local-SNAPSHOT"}, 
-        {"repo": "mvn-local-RELEASE"}, 
-        {"repo": "docker-local"}, 
-        {"repo": "dockerhub-cache"}
-        ]
-})'// replace this with your AQL query
+def query = 'items.find({ "$or" :[{"repo": "jcenter-cache"}, {"repo": "mvn-local-SNAPSHOT"}, {"repo": "mvn-local-RELEASE"}, {"repo": "docker-local"}, {"repo": "dockerhub-cache"}]})'// replace this with your AQL query
 
 def artifactoryURL = 'http://104.199.127.225:12002/artifactory/' // replace this with your Artifactory server
 def restClient = new RESTClient(artifactoryURL)
 restClient.setHeaders(['Authorization': 'Basic ' + "admin:password".getBytes('iso-8859-1').encodeBase64()]) //replace the 'admin:password' with your own credentials
-def dryRun = true //set the value to false if you want the script to actually delete the artifacts
+def dryRun = false //set the value to false if you want the script to actually delete the artifacts
 
 def itemsToDelete = getAqlQueryResult(restClient, query)
 if (itemsToDelete != null && itemsToDelete.size() > 0) {

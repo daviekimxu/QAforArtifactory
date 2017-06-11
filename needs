@@ -30,7 +30,7 @@ gradle neet #github, script, and properties in project directory
 
 rpm - 
 pypi - 
-ivy
+ivy- ivysettings stis next to ivy.xml
 ruby
 
 
@@ -38,6 +38,9 @@ ruby
 
 //Find all items in a repository called "my_local" that have a property with a key called "license" and value that is any variant of "LGPL".
 items.find({"repo" : "my_local"},{"@artifactory.licenses" : {"$match" : "*LGPL*"}})
+
+-T
+>>> with open('report.xls', 'rb') as f: r = requests.post('http://httpbin.org/post', files={'report.xls': f})
 
 
 

@@ -6,6 +6,18 @@ def run(arturl, user, password):
 	import json
 	from os.path import expanduser
 
+	class cd:  #basic context manager
+	"""Context manager for changing the current working directory"""
+	def __init__(self, newPath):
+		self.newPath = os.path.expanduser(newPath)
+
+	def __enter__(self):
+		self.savedPath = os.getcwd()
+		os.chdir(self.newPath)
+
+	def __exit__(self, etype, value, traceback):
+		os.chdir(self.savedPath)
+
 	start= os.getcwd()
 	os.chdir("npmops")
 
@@ -26,11 +38,11 @@ def run(arturl, user, password):
 	reindex=requests.post(indexturl+repo1+"/reindex", auth=(user,password)) 
 	reindex=requests.post(indexturl+repo2+"/reindex", auth=(user,password)) 
 
-	#npmsearch [QA] [arturl+"artifactory/"+ repo1]
-	subprocess.call(["npmsearch", "QA", arturl+"artifactory/repo1"])
-	subprocess.call(["npmsearch", "QA", arturl+"artifactory/repo1"])
+	#npmsearch [QA] [arturl+"artifactory/"+ repo1]. This is broken, use default search
+	#subprocess.call(["npm search ", "QA ", arturl+"artifactory/"+repo1])
+	#subprocess.call(["npm search ", "QA ", arturl+"artifactory/"+repo1])
 
-	subprocess.call(["rm", "-rf", "/usr/local/lib/node_modules"])
-	subprocess.call(["mkdir", "/usr/local/lib/node_modules"])
+	with cd("/usr/local/lib/node_modules"):
+		subprocess.call(["rm ", "-r ", "*"])
 
-	os.chdir(start)
+	
